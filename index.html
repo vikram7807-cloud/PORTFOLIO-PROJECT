@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PORTFOLIO WEBSITE</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        function showSection(sectionId) {
+            const sections = document.querySelectorAll('section');
+            sections.forEach(section => {
+            section.style.display = 'none';
+            });
+            const activeSection = document.getElementById(sectionId);
+            if (sectionId === 'home') {
+                activeSection.style.display = 'flex';
+            }
+            else {
+                activeSection.style.display = 'block';
+            }
+            const buttons = document.querySelectorAll('.main_nav button');
+            buttons.forEach(button => {
+                button.classList.remove('active_btn');
+            });
+            const activeButton = document.querySelector(
+                `.main_nav button a[onclick="showSection('${sectionId}')"]`
+            );
+            if (activeButton) {
+                activeButton.parentElement.classList.add('active_btn');
+            }
+        } 
+        window.onload = function() {
+        showSection('home');
+        };
+        function sendMessage() {
+            const name = document.getElementById('user_name').value;
+            const email = document.getElementById('user_email').value;
+            const subject = document.getElementById('user_subject').value;
+            const message = document.getElementById('user_message').value;
+            if(!name || !email || !subject || !message) {
+                alert('Please fill all fields!');
+                return;
+            }
+            const whatsappMsg = 
+                `Hello Vikram!%0A%0A` +
+                `*Name:* ${name}%0A` +
+                `*Email:* ${email}%0A` +
+                `*Subject:* ${subject}%0A` +
+                `*Message:* ${message}`;
+            window.open(
+                `https://wa.me/918179527752?text=${whatsappMsg}`,
+                '_blank'
+            );
+            document.getElementById('user_name').value = '';
+            document.getElementById('user_email').value = '';
+            document.getElementById('user_subject').value = '';
+            document.getElementById('user_message').value = '';
+        }
+    </script>
+</head>
+<body>
+    <header class="container1">
+        <img src="LORD HANUMAN WALLPAPER.jpg" id="profile_img" alt="profile">
+        <div class="text_section">
+            <p id="name">BADDIPUDI VIKRAM REDDY</p>
+            <p id="welcome_msg">Hello, Welcome to my Portfolio</p>
+        </div>
+    </header>
+    <div class="page_layout">
+        <nav class="main_nav">
+            <button><a href="#" id="main_a" onclick="showSection('home')">HOME</a></button>
+            <button><a href="#" id="main_a" onclick="showSection('about')">ABOUT</a></button>
+            <button><a href="#" id="main_a" onclick="showSection('resume')">RESUME</a></button>
+            <button><a href="#" id="main_a" onclick="showSection('project')">PROJECT</a></button>
+            <button><a href="#" id="main_a" onclick="showSection('certificate')">CERTIFICATION</a></button>
+            <button><a href="#" id="main_a" onclick="showSection('contact')">CONTACT</a></button>
+        </nav>
+        <div class="content_area">
+            <section id="home" autofocus>
+                <div class="home_section">
+                    <h1>INTRODUCTION</h1>
+                    <p id="home_intro">Hello! I am Baddipudi Vikram Reddy, a passionate Computer Science Engineering student with a strong drive to become a Full Stack Developer. I specialize in building modern, responsive, and user-friendly web applications using HTML, CSS, JavaScript, and more. I love turning ideas into reality through clean code and creative design. Always eager to learn new technologies and take on challenging projects that make a real-world impact.</p>
+                    <p id="home_skills">
+                        Programming: C, Java &nbsp;|&nbsp;
+                        Frontend: HTML, CSS, JavaScript &nbsp;|&nbsp;
+                        Goal: Full Stack Developer
+                    </p>
+                    <p id="home_quote">
+                        "Code is not just my skill — it's my passion."
+                    </p>
+                    <nav class="home_nav">
+                        <button id="home_but"><a href="#" id="home_a" onclick="showSection('resume')">VIEW RESUME</a></button>
+                        <button id="home_but"><a href="#" id="home_a" onclick="showSection('project')">VIEW PROJECT</a></button>
+                        <button class="hire_but"><a href="#" id="home_a" onclick="showSection('contact')">HIRE ME</a></button>
+                    </nav>
+                </div>
+            </section>
+            <section id="about">
+                <h1>ABOUT ME</h1>
+                <div class="about_section">
+                    <div class="about_card">
+                        <h2>Personal Information</h2>
+                        <div class="personal_intro">
+                            <p>Hi! I am Baddipudi Vikram Reddy, a 21 year old Computer Science Engineering student from Kanuparthipadu, Nellore. I was born on 21st March 2005 and I am currently pursuing my 4th year B.Tech at Geethanjali Institute of Science and Technology. I am a Telugu native speaker and I am also comfortable communicating in English and Hindi. I am a passionate and dedicated individual who loves coding, building websites, and constantly learning new technologies to grow as a developer.</p>
+                        </div>
+                    </div>
+                    <div class="about_card">
+                        <h2>Education</h2>
+                        <table class="edu_table">
+                            <tr>
+                                <th>Degree</th>
+                                <th>Institution</th>
+                                <th>Year</th>
+                                <th>Percentage/Cgpa</th>
+                            </tr>
+                            <tr>
+                                <td>B.Tech in CSE</td>
+                                <td>Geethanjali Institute of Science and Technology</td>
+                                <td>2023 - 2027</td>
+                                <td>8.52 cgpa</td>
+                            </tr>
+                            <tr>
+                                <td>Intermediate in MPC</td>
+                                <td>Narayana Junior College</td>
+                                <td>2021 - 2023</td>
+                                <td>93.3%</td>
+                            </tr>
+                            <tr>
+                                <td>SSC (10th)</td>
+                                <td>Sri Chaitanya Techno School</td>
+                                <td>2020 - 2021</td>
+                                <td>98%</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="about_card">
+                        <h2>Skills</h2>
+                        <div class="skills_grid">
+                            <ol>
+                                <li>Java</li>
+                                <li>C</li>
+                                <li>HTML</li>
+                                <li>CSS</li>
+                                <li>JavaScript</li>
+                            </ol>
+                        </div>
+                    </div>
+                    <div class="about_card">
+                        <h2>Hobbies & Interests</h2>
+                        <ul class="hobby_list">
+                            <li>Web Development</li>
+                            <li>Learning New Technologies</li>
+                            <li>Playing Cricket</li>
+                            <li>Listening to Music</li>
+                        </ul>
+                    </div>
+                    <div class="about_card full_width">
+                        <h2>My Goal</h2>
+                        <p>I aim to become a skilled Java-based Full Stack Developer, building powerful and scalable web applications. I am currently strengthening my core skills in Java, C, and Frontend Development while exploring the world of Full Stack technologies. My dream is to work at a top tech company and contribute to impactful real-world projects.</p>
+                    </div>
+                </div>
+            </section>
+            <section id="resume">
+                <h1>RESUME</h1>
+                <div class="resume_section">
+                    <iframe 
+                        src="resume.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH" 
+                        type="application/pdf"
+                        frameborder="0"
+                        scrolling="none" 
+                        id="resume_embed">
+                    </iframe>    
+                </div>
+                <div class="resume_btn">
+                    <button>
+                        <a href="resume.pdf" download="Vikram_Reddy_Resume" id="resume_a">DOWNLOAD</a>
+                    </button>
+                    <button class="hire_but">
+                        <a href="#" onclick="showSection('contact')" id="resume_a">HIRE ME</a>
+                    </button>
+                </div>
+            </section>
+            <section id="project">
+                <h1>MY PROJECTS</h1>
+                <p class="p_intro">Here are some of my projects I developed to improve my web development and programming skills.</p>
+                <div class="project_section">
+                    <div  class="project_head">
+                        <h2 id="project_pn">Online Student Registration Form</h2>
+                        <div class="project_body">
+                            <h2>Project Intro</h2>
+                            <p>Developed an interactive student registration form that allows users to submit student details through a user-friendly interface. The form includes multiple input fields, validations, and organized layouts.</p>
+                        </div>
+                        <div class="project_body">
+                            <h2>Technologies Used</h2>
+                            <p>The Registration form was developed using <strong>HTML5</strong> (for Creating structure), <strong>CSS</strong> (for Styling and Responsive design) and <strong>JavaScript</strong> (for Validation and Interactive user functionality).</p>
+                        </div>
+                        <div class="project_body">
+                            <h2>Project Image</h2>
+                            <img src="srf.png" class="project_image">
+                        </div>
+                        <button class="project_btn">
+                            <a href="https://vikram7807-cloud.github.io/STUDENT-REGISTRATION-FORM/" target="_blank" class="project_a">LIVE DEMO</a>
+                        </button>
+                    </div>
+                </div>
+            </section>
+            <section id="certificate">
+                <h1>CERTIFICATIONS</h1>
+                <div class="certificate_section">
+                    <table class="certificate_table">
+                        <tr>
+                            <td>AWS CERTIFICATE
+                                <button class="certificate_but">
+                                    <a href="CERTIFICATIONS\AWS CERTIFICATE.pdf" target="_blank" id="certificate_a">VIEW</a>
+                                </button>
+                                <button class="certificate_but">
+                                    <a href="CERTIFICATIONS\AWS CERTIFICATE.pdf" download="Aws_Certificate" id="certificate_a">DOWNLOAD</a>
+                                </button>
+                            </td>
+                            <td>GEEKS FOR GEEKS JAVA CERTIFICATE
+                                <button class="certificate_but">
+                                    <a href="CERTIFICATIONS/GEEKS FOR GEEKS JAVA CERTIFICATE.pdf" target="_blank" id="certificate_a">VIEW</a>
+                                </button>
+                                <button class="certificate_but">
+                                    <a href="CERTIFICATIONS/GEEKS FOR GEEKS JAVA CERTIFICATE.pdf" download="Geeks For Geeks Java_Certificate" id="certificate_a">DOWNLOAD</a>
+                                </button>
+                            </td>
+                            <td>GREAT LEARNING C CERTIFICATE
+                                <button class="certificate_but">
+                                    <a href="CERTIFICATIONS/GREAT LEARNING C CERTIFICATE.pdf" target="_blank" id="certificate_a">VIEW</a>
+                                </button>
+                                <button class="certificate_but">
+                                    <a href="CERTIFICATIONS/GREAT LEARNING C CERTIFICATE.pdf" download="Great Learning C_Certificate" id="certificate_a">DOWNLOAD</a>
+                                </button>
+                            </td>
+                            <td>GREAT LEARNING JAVA CERTIFICATE
+                                <button class="certificate_but">
+                                    <a href="CERTIFICATIONS/GREAT LEARNING JAVA CERTIFICATE.pdf" target="_blank" id="certificate_a">VIEW</a>
+                                </button>
+                                <button class="certificate_but">
+                                    <a href="CERTIFICATIONS/GREAT LEARNING JAVA CERTIFICATE.pdf" download="Great Learning Java_Certificate" id="certificate_a">DOWNLOAD</a>
+                                </button>
+                            </td>
+                            <td>INFOSYS C CERTIFICATE
+                                <button class="certificate_but">
+                                    <a href="CERTIFICATIONS/INFOSYS C CERTIFICATE.pdf" target="_blank" id="certificate_a">VIEW</a>
+                                </button>
+                                <button class="certificate_but">
+                                    <a href="CERTIFICATIONS/INFOSYS C CERTIFICATE.pdf" download="Infosys C_Certificate" id="certificate_a">DOWNLOAD</a>
+                                </button>
+                            </td>
+                            <td>INFOSYS DBMS CERTIFICATE
+                                <button class="certificate_but">
+                                    <a href="CERTIFICATIONS/INFOSYS DBMS CERTIFICATE.pdf" target="_blank" id="certificate_a">VIEW</a>
+                                </button>
+                                <button class="certificate_but">
+                                    <a href="CERTIFICATIONS/INFOSYS DBMS CERTIFICATE.pdf" download="Infosys Dbms_Certificate" id="certificate_a">DOWNLOAD</a>
+                                </button>
+                            </td>
+                            <td>INFOSYS PYTHON CERTIFICATE
+                                <button class="certificate_but">
+                                    <a href="CERTIFICATIONS/INFOSYS PYTHON CERTIFICATE.pdf" target="_blank" id="certificate_a">VIEW</a>
+                                </button>
+                                <button class="certificate_but">
+                                    <a href="CERTIFICATIONS/INFOSYS PYTHON CERTIFICATE.pdf" download="Infosys Python_Certificate" id="certificate_a">DOWNLOAD</a>
+                                </button>
+                            </td>
+                            <td>NPTEL IQTA CERTIFICATE
+                                <button class="certificate_but">
+                                    <a href="CERTIFICATIONS/NPTEL IQTA CERTIFICATE.pdf" target="_blank" id="certificate_a">VIEW</a>
+                                </button>
+                                <button class="certificate_but">
+                                    <a href="CERTIFICATIONS/NPTEL IQTA CERTIFICATE.pdf" download="NPTEL Iqta_Certificate" id="certificate_a">DOWNLOAD</a>
+                                </button>
+                            </td>
+                            <td>NPTEL NLP CERTIFICATE
+                                <button class="certificate_but">
+                                    <a href="CERTIFICATIONS/NPTEL NLP CERTIFICATE.pdf" target="_blank" id="certificate_a">VIEW</a>
+                                </button>
+                                <button class="certificate_but">
+                                    <a href="CERTIFICATIONS/NPTEL NLP CERTIFICATE.pdf" download="NPTEL Nlp_Certificate" id="certificate_a">DOWNLOAD</a>
+                                </button>
+                            </td>
+                            <td>SPOKEN TUTORIAL C CERTIFICATE
+                                <button class="certificate_but">
+                                    <a href="CERTIFICATIONS/SPOKEN TUTORIAL C CERTIFICATE.pdf" target="_blank" id="certificate_a">VIEW</a>
+                                </button>
+                                <button class="certificate_but">
+                                    <a href="CERTIFICATIONS/SPOKEN TUTORIAL C CERTIFICATE.pdf" download="Spoken Tutorial C_Certificate" id="certificate_a">DOWNLOAD</a>
+                                </button>
+                            </td>
+                            <td>SPOKEN TUTORIAL DBMS CERTIFICATE
+                                <button class="certificate_but">
+                                    <a href="CERTIFICATIONS/SPOKEN TUTORIAL DBMS CERTIFICATE.pdf" target="_blank" id="certificate_a">VIEW</a>
+                                </button>
+                                <button class="certificate_but">
+                                    <a href="CERTIFICATIONS/SPOKEN TUTORIAL DBMS CERTIFICATE.pdf" download="Spoken Tutorial Dbms_Certificate" id="certificate_a">DOWNLOAD</a>
+                                </button>
+                            </td>
+                            <td>SPOKEN TUTORIAL JAVA CERTIFICATE
+                                <button class="certificate_but">
+                                    <a href="CERTIFICATIONS/SPOKEN TUTORIAL JAVA CERTIFICATE.pdf" target="_blank" id="certificate_a">VIEW</a>
+                                </button>
+                                <button class="certificate_but">
+                                    <a href="CERTIFICATIONS/SPOKEN TUTORIAL JAVA CERTIFICATE.pdf" download="Spoken Tutorial Java_Certificate" id="certificate_a">DOWNLOAD</a>
+                                </button>
+                            </td>
+                            <td>TECH SAKSHAM CERTIFICATE
+                                <button class="certificate_but">
+                                    <a href="CERTIFICATIONS/TECH SAKSHAM CERTIFICATE.pdf" target="_blank" id="certificate_a">VIEW</a>
+                                </button>
+                                <button class="certificate_but">
+                                    <a href="CERTIFICATIONS/TECH SAKSHAM CERTIFICATE.pdf" download="Tech Saksham_Certificate" id="certificate_a">DOWNLOAD</a>
+                                </button>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </section>
+            <section id="contact">
+                <h1>CONTACT ME</h1>
+                <div class="contact_section">
+                    <div class="getintouch">
+                        <h3>Get In Touch<hr></h3>
+                        <div class="email">
+                            <h4>Email</h4>
+                            <a href="mailto:b.vikramreddy1234@gmail.com">b.vikramreddy1234@gmail.com</a>
+                        </div>
+                        <div class="phone">
+                            <h4>Phone</h4>
+                            <a href="tel:+918179527752">+91 8179527752</a>
+                        </div>
+                        <div class="location">
+                            <h4>Location</h4>
+                            <p>Kanuparthipadu, Nellore, Andhra Pradesh</p>
+                        </div>
+                        <div class="linkedin">
+                            <h4>Linked in</h4>
+                            <a href="https://www.linkedin.com/in/baddipudi-vikram-reddy-9856373b7/">Baddipudi Vikram Reddy</a>
+                        </div>
+                        <div class="github">
+                            <h4>GitHub</h4>
+                            <a href="https://github.com/vikram7807-cloud">vikram7807-cloud</a>
+                        </div>
+                        <div class="available">
+                            <h3>Available For</h3>
+                            <ul>
+                                <li>Internship</li>
+                                <li>Full Time</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="sendmeamessage">
+                        <h3>Send Me a Message<hr></h3>
+                        <div class="input-box full-width">
+                            <label>Your Name</label><br>
+                            <input type="text" id="user_name" placeholder="Enter your name" autofocus required><br>
+                        </div>
+                        <div class="input-box full-width">
+                            <label>Your Email</label><br>
+                            <input type="email" id="user_email" placeholder="Enter your Email" required><br>
+                        </div>
+                        <div class="input-box full-width">
+                            <label>Subject</label><br>
+                            <input type="text" id="user_subject" placeholder="Enter Subject" required><br>
+                        </div>
+                        <div class="input-box full-width">
+                            <label>Message</label><br>
+                            <textarea type="text" id="user_message" placeholder="Enter your message here" required></textarea><br>
+                        </div>
+                        <div class="send_btn" onclick="sendMessage()">
+                            Send Message
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+    <a href="https://wa.me/918179527752" 
+       target="_blank" 
+       class="whatsapp_float">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" 
+             alt="WhatsApp" 
+             class="whatsapp_icon">
+    </a>
+</body>
+</html>
