@@ -974,12 +974,12 @@ textarea:focus{
         font-size: 12px;
     }
     .getintouch {
-        width: 75%;
+        max-width: 100%;
         padding: 5px;
     }
 
     .sendmeamessage {
-        width: 75%;
+        max-width: 100%;
         padding: 5px;
         margin-left: 0px;
     }
