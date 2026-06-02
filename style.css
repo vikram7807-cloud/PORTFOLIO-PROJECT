@@ -973,7 +973,10 @@ textarea:focus{
     .getintouch p {
         font-size: 12px;
     }
-
+    .sendmeamessage{
+        width: 50%;
+    margin-left: 0px;
+    }
     .sendmeamessage h3 {
         font-size: 15px;
     }
