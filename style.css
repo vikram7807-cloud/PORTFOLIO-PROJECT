@@ -512,239 +512,573 @@ textarea:focus{
 
 
 
-/* ==========================================
-   RESPONSIVE DESIGN
-========================================== */
+/* ============================================
+   RESPONSIVE CSS - ALL DEVICES
+   ============================================ */
 
-/* Tablets & Mobile */
-@media (max-width: 768px){
+/* Large Desktop (1200px and above) - already handled */
 
-    body{
-        padding-top:90px;
+/* Medium Desktop / Small Laptop (max 1024px) */
+@media screen and (max-width: 1024px) {
+
+    #name {
+        font-size: 22px;
     }
 
-    /* Header */
-    .container1{
-        padding:10px;
+    #welcome_msg {
+        font-size: 16px;
     }
 
-    #profile_img{
-        width:60px;
-        height:60px;
-        position:static;
-        margin-right:10px;
+    .main_nav {
+        width: 140px;
     }
 
-    #name{
-        font-size:20px;
+    .content_area {
+        margin-left: 140px;
+        width: calc(100% - 140px);
     }
 
-    #welcome_msg{
-        font-size:14px;
+    .home_section {
+        padding: 20px;
     }
 
-    /* Navigation */
-    .main_nav{
-        position:fixed;
-        bottom:0;
-        left:0;
-        width:100%;
-        height:70px;
-        flex-direction:row;
-        justify-content:space-evenly;
-        align-items:center;
-        padding:5px;
+    .about_section {
+        padding: 20px 50px 50px 50px;
     }
 
-    .main_nav button{
-        flex:1;
-        margin:2px;
-        border-width:2px;
+    .about_grid {
+        grid-template-columns: 1fr 1fr;
     }
 
-    #main_a{
-        width:auto;
-        font-size:11px;
-        padding:5px;
+    .project_section {
+        padding: 20px 50px 50px 50px;
     }
 
-    /* Content */
-    .content_area{
-        margin-left:0;
-        width:100%;
-        padding-bottom:90px;
+    .project_image {
+        width: 100%;
+        height: auto;
     }
 
-    /* Common Sections */
-    section{
-        width:100%;
-        padding:90px 15px 30px;
-        box-sizing:border-box;
+    .contact_section {
+        padding: 20px;
     }
 
-    section h1{
-        font-size:28px;
-    }
-
-    /* Home */
-    .home_section{
-        min-height:auto;
-        padding:20px;
-    }
-
-    #home_intro{
-        padding:15px;
-        font-size:15px;
-        text-align:justify;
-    }
-
-    #home_skills,
-    #home_quote{
-        font-size:14px;
-    }
-
-    .home_nav{
-        flex-direction:column;
-        width:100%;
-    }
-
-    .home_nav button{
-        width:100%;
-        max-width:250px;
-    }
-
-    /* About */
-    .about_section{
-        padding:10px;
-    }
-
-    .about_card{
-        width:100%;
-        margin-bottom:15px;
-    }
-
-    .edu_table{
-        display:block;
-        overflow-x:auto;
-        white-space:nowrap;
-    }
-
-    /* Resume */
-    #resume_embed{
-        width:100%;
-        height:70vh;
-    }
-
-    .resume_btn{
-        flex-direction:column;
-        gap:15px;
-    }
-
-    /* Projects */
-    .project_section{
-        padding:10px;
-    }
-
-    .project_head{
-        width:100%;
-    }
-
-    .project_image{
-        width:100%;
-        height:auto;
-        border-radius:10px;
-    }
-
-    /* Certificates */
-    .certificate_section{
-        padding:10px;
-    }
-
-    .certificate_table,
-    .certificate_table tr{
-        display:block;
-        width:100%;
-    }
-
-    .certificate_table td{
-        display:flex;
-        flex-direction:column;
-        gap:10px;
-        margin-bottom:10px;
-        width:auto;
-    }
-
-    /* Contact */
-    .contact_section{
-        flex-direction:column;
-        padding:10px;
-    }
-
-    .getintouch,
-    .sendmeamessage{
-        width:100%;
-        margin:0;
-        box-sizing:border-box;
-    }
-
-    .send_btn{
-        width:100%;
-        margin:15px 0;
-    }
-
-    input,
-    textarea{
-        width:100%;
-        box-sizing:border-box;
-    }
-
-    /* WhatsApp */
-    .whatsapp_float{
-        bottom:90px;
-        right:15px;
-    }
-
-    .whatsapp_icon{
-        width:50px;
-        height:50px;
+    #resume_embed {
+        min-height: 70vh;
     }
 }
 
+/* Tablet (max 768px) */
+@media screen and (max-width: 768px) {
 
-/* Small Mobiles */
-@media (max-width:480px){
-
-    #name{
-        font-size:16px;
+    /* Header */
+    .container1 {
+        padding: 8px 0;
     }
 
-    #welcome_msg{
-        font-size:12px;
+    #profile_img {
+        width: 55px;
+        height: 55px;
+        top: 5px;
+        left: 5px;
     }
 
-    section h1{
-        font-size:22px;
+    #name {
+        font-size: 18px;
     }
 
-    #home_intro{
-        font-size:14px;
+    #welcome_msg {
+        font-size: 13px;
     }
 
-    #home_skills,
-    #home_quote{
-        font-size:12px;
+    /* Page Layout */
+    .page_layout {
+        flex-direction: column;
     }
 
-    #main_a{
-        font-size:9px;
+    /* Nav moves to bottom */
+    .main_nav {
+        position: fixed;
+        top: auto;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: auto;
+        min-height: auto;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        padding: 5px 2px;
+        gap: 2px;
+        z-index: 999;
     }
 
-    .project_body p,
-    .personal_intro p{
-        font-size:13px;
+    .main_nav button {
+        width: auto;
+        padding: 4px 2px;
+        border: 2px solid white;
     }
 
-    .edu_table{
-        font-size:11px;
+    #main_a {
+        font-size: 8px;
+        width: auto;
+        height: auto;
+        padding: 2px 4px;
+    }
+
+    /* Content Area */
+    .content_area {
+        margin-left: 0;
+        width: 100%;
+        padding-bottom: 65px;
+    }
+
+    /* Home Section */
+    #home {
+        min-height: 100vh;
+        padding-top: 80px;
+    }
+
+    .home_section {
+        padding: 15px;
+        width: 100%;
+    }
+
+    #home_intro {
+        font-size: 13px;
+        padding: 10px;
+    }
+
+    #home_skills {
+        font-size: 11px;
+    }
+
+    #home_quote {
+        font-size: 12px;
+    }
+
+    .home_nav {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        padding: 10px;
+    }
+
+    #home_but {
+        width: 160px;
+    }
+
+    .hire_but {
+        width: 160px;
+    }
+
+    /* About Section */
+    #about {
+        padding-top: 80px;
+    }
+
+    #about h1 {
+        text-align: center;
+        font-size: 22px;
+    }
+
+    .about_section {
+        padding: 15px;
+        grid-template-columns: 1fr;
+    }
+
+    .about_grid {
+        grid-template-columns: 1fr;
+    }
+
+    .full_width {
+        grid-column: span 1;
+    }
+
+    .about_card {
+        padding: 15px;
+        margin-bottom: 15px;
+    }
+
+    .about_card h2 {
+        font-size: 15px;
+    }
+
+    /* Education Table */
+    .edu_table {
+        font-size: 10px;
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    .edu_table th,
+    .edu_table td {
+        padding: 6px 4px;
+    }
+
+    /* Skills */
+    .skills_grid ol {
+        padding-left: 20px;
+        font-size: 13px;
+    }
+
+    /* Hobby list */
+    .hobby_list {
+        font-size: 13px;
+    }
+
+    /* Resume Section */
+    #resume {
+        padding-top: 80px;
+    }
+
+    #resume h1 {
+        text-align: center;
+        font-size: 22px;
+    }
+
+    .resume_section {
+        height: 60vh;
+    }
+
+    #resume_embed {
+        min-height: 60vh;
+    }
+
+    .resume_btn {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        padding: 10px;
+    }
+
+    /* Project Section */
+    #project {
+        padding-top: 80px;
+    }
+
+    #project h1 {
+        text-align: center;
+        font-size: 22px;
+    }
+
+    .p_intro {
+        font-size: 13px;
+        text-align: center;
+        padding: 0 15px;
+    }
+
+    .project_section {
+        padding: 15px;
+    }
+
+    .project_head {
+        padding: 15px;
+    }
+
+    #project_pn {
+        font-size: 16px;
+        text-align: center;
+    }
+
+    .project_body {
+        padding: 10px;
+    }
+
+    .project_body h2 {
+        font-size: 14px;
+    }
+
+    .project_body p {
+        font-size: 12px;
+    }
+
+    .project_image {
+        width: 100%;
+        height: auto;
+    }
+
+    .project_btn {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    /* Certificate Section */
+    #certificate {
+        padding-top: 80px;
+    }
+
+    #certificate h1 {
+        text-align: center;
+        font-size: 22px;
+    }
+
+    .certificate_section {
+        padding: 15px;
+        overflow-x: auto;
+    }
+
+    .certificate_table {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .certificate_table tr {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .certificate_table td {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+        padding: 10px;
+        border: 1px solid #36454f;
+        border-radius: 5px;
+        font-size: 13px;
+    }
+
+    .certificate_but {
+        width: 100px;
+    }
+
+    /* Contact Section */
+    #contact {
+        padding-top: 80px;
+    }
+
+    #contact h1 {
+        text-align: center;
+        font-size: 22px;
+    }
+
+    .contact_section {
+        flex-direction: column;
+        padding: 15px;
+        gap: 20px;
+    }
+
+    .getintouch {
+        width: 100%;
+        padding: 15px;
+    }
+
+    .sendmeamessage {
+        width: 100%;
+        padding: 15px;
+    }
+
+    .input-box input,
+    .input-box textarea {
+        width: 100%;
+        padding: 8px;
+        font-size: 13px;
+    }
+
+    .send_btn {
+        width: 100%;
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    /* WhatsApp */
+    .whatsapp_float {
+        bottom: 70px;
+        right: 15px;
+    }
+
+    .whatsapp_icon {
+        width: 45px;
+        height: 45px;
+    }
+}
+
+/* Mobile Phone (max 480px) */
+@media screen and (max-width: 480px) {
+
+    /* Header */
+    #profile_img {
+        width: 45px;
+        height: 45px;
+    }
+
+    #name {
+        font-size: 15px;
+    }
+
+    #welcome_msg {
+        font-size: 11px;
+    }
+
+    /* Nav */
+    #main_a {
+        font-size: 7px;
+        padding: 2px;
+    }
+
+    /* Home */
+    #home {
+        padding-top: 70px;
+    }
+
+    .home_section {
+        padding: 10px;
+    }
+
+    #home h1 {
+        font-size: 18px;
+    }
+
+    #home_intro {
+        font-size: 12px;
+        line-height: 1.6;
+    }
+
+    #home_skills {
+        font-size: 10px;
+        line-height: 1.8;
+    }
+
+    #home_quote {
+        font-size: 11px;
+    }
+
+    /* About */
+    #about h1 {
+        font-size: 18px;
+    }
+
+    .about_card h2 {
+        font-size: 13px;
+    }
+
+    .personal_intro p {
+        font-size: 12px;
+    }
+
+    /* Resume */
+    #resume h1 {
+        font-size: 18px;
+    }
+
+    #resume_embed {
+        min-height: 50vh;
+    }
+
+    /* Project */
+    #project h1 {
+        font-size: 18px;
+    }
+
+    /* Certificate */
+    #certificate h1 {
+        font-size: 18px;
+    }
+
+    .certificate_table td {
+        font-size: 12px;
+    }
+
+    /* Contact */
+    #contact h1 {
+        font-size: 18px;
+    }
+
+    .getintouch h3 {
+        font-size: 15px;
+    }
+
+    .getintouch h4 {
+        font-size: 13px;
+    }
+
+    .getintouch a,
+    .getintouch p {
+        font-size: 12px;
+    }
+
+    .sendmeamessage h3 {
+        font-size: 15px;
+    }
+
+    .input-box label {
+        font-size: 12px;
+    }
+
+    .input-box input,
+    .input-box textarea {
+        font-size: 12px;
+        padding: 6px;
+    }
+
+    .send_btn {
+        font-size: 13px;
+        padding: 8px;
+    }
+
+    /* WhatsApp */
+    .whatsapp_float {
+        bottom: 65px;
+        right: 10px;
+    }
+
+    .whatsapp_icon {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+/* Very Small Phones (max 360px) */
+@media screen and (max-width: 360px) {
+
+    #name {
+        font-size: 12px;
+    }
+
+    #welcome_msg {
+        font-size: 10px;
+    }
+
+    #profile_img {
+        width: 35px;
+        height: 35px;
+    }
+
+    #main_a {
+        font-size: 6px;
+        padding: 1px;
+    }
+
+    #home_intro {
+        font-size: 11px;
+    }
+
+    #home_skills {
+        font-size: 9px;
+    }
+
+    .about_card {
+        padding: 10px;
+    }
+
+    .edu_table {
+        font-size: 9px;
+    }
+
+    .certificate_table td {
+        font-size: 11px;
+    }
+
+    .send_btn {
+        font-size: 12px;
+    }
+
+    .whatsapp_icon {
+        width: 35px;
+        height: 35px;
     }
 }
