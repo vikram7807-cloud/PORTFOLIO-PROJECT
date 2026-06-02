@@ -1016,6 +1016,7 @@ textarea:focus{
     }
 
     .send_btn {
+        width: 50%;
         font-size: 13px;
         padding: 8px;
     }
